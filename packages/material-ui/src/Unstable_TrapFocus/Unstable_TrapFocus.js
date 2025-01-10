@@ -28,7 +28,7 @@ function Unstable_TrapFocus(props) {
   // can be removed once we drop support for non ref forwarding class components
   const handleOwnRef = React.useCallback((instance) => {
     // #StrictMode ready
-    rootRef.current = ReactDOM.findDOMNode(instance);
+    rootRef.current = instance;
   }, []);
   const handleRef = useForkRef(children.ref, handleOwnRef);
 
@@ -63,7 +63,7 @@ function Unstable_TrapFocus(props) {
             [
               'Material-UI: The modal content node does not accept focus.',
               'For the benefit of assistive technologies, ' +
-                'the tabIndex of the node is being set to "-1".',
+              'the tabIndex of the node is being set to "-1".',
             ].join('\n'),
           );
         }

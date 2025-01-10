@@ -131,8 +131,7 @@ const ListItem = React.forwardRef(function ListItem(props, ref) {
     children.length && isMuiElement(children[children.length - 1], ['ListItemSecondaryAction']);
 
   const handleOwnRef = React.useCallback((instance) => {
-    // #StrictMode ready
-    listItemRef.current = ReactDOM.findDOMNode(instance);
+    listItemRef.current = instance;
   }, []);
   const handleRef = useForkRef(handleOwnRef, ref);
 
@@ -234,8 +233,8 @@ ListItem.propTypes = {
     if (secondaryActionIndex !== -1 && secondaryActionIndex !== children.length - 1) {
       return new Error(
         'Material-UI: You used an element after ListItemSecondaryAction. ' +
-          'For ListItem to detect that it has a secondary action ' +
-          'you must pass it as the last child to ListItem.',
+        'For ListItem to detect that it has a secondary action ' +
+        'you must pass it as the last child to ListItem.',
       );
     }
 

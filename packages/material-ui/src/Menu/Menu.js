@@ -125,7 +125,7 @@ const Menu = React.forwardRef(function Menu(props, ref) {
       return React.cloneElement(child, {
         ref: (instance) => {
           // #StrictMode ready
-          contentAnchorRef.current = ReactDOM.findDOMNode(instance);
+          contentAnchorRef.current = instance;
           setRef(child.ref, instance);
         },
       });

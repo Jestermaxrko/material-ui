@@ -90,8 +90,7 @@ const ButtonBase = React.forwardRef(function ButtonBase(props, ref) {
 
   const buttonRef = React.useRef(null);
   function getButtonNode() {
-    // #StrictMode ready
-    return ReactDOM.findDOMNode(buttonRef.current);
+    return buttonRef.current;
   }
 
   const rippleRef = React.useRef(null);

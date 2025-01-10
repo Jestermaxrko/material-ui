@@ -452,7 +452,7 @@ const SwipeableDrawer = React.forwardRef(function SwipeableDrawer(inProps, ref) 
       // The ref may be null when a parent component updates while swiping.
       setPosition(
         getMaxTranslate(horizontalSwipe, paperRef.current) +
-          (disableDiscovery ? 20 : -swipeAreaWidth),
+        (disableDiscovery ? 20 : -swipeAreaWidth),
         {
           changeTransition: false,
         },
@@ -502,7 +502,7 @@ const SwipeableDrawer = React.forwardRef(function SwipeableDrawer(inProps, ref) 
 
   const handleBackdropRef = React.useCallback((instance) => {
     // #StrictMode ready
-    backdropRef.current = ReactDOM.findDOMNode(instance);
+    backdropRef.current = instance;
   }, []);
 
   return (

@@ -201,8 +201,7 @@ const MenuList = React.forwardRef(function MenuList(props, ref) {
   };
 
   const handleOwnRef = React.useCallback((instance) => {
-    // #StrictMode ready
-    listRef.current = ReactDOM.findDOMNode(instance);
+    listRef.current = instance;
   }, []);
   const handleRef = useForkRef(handleOwnRef, ref);
 

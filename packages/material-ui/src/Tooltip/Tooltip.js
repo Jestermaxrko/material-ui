@@ -397,15 +397,6 @@ const Tooltip = React.forwardRef(function Tooltip(props, ref) {
 
   const handleUseRef = useForkRef(setChildNode, ref);
   const handleFocusRef = useForkRef(focusVisibleRef, handleUseRef);
-  // can be removed once we drop support for non ref forwarding class components
-  // const handleOwnRef = React.useCallback(
-  //   (instance) => {
-  //     // #StrictMode ready
-  //     setRef(handleFocusRef, ReactDOM.findDOMNode(instance));
-  //   },
-  //   [handleFocusRef],
-  // );
-
   const handleRef = useForkRef(children.ref, handleFocusRef);
 
   // There is no point in displaying an empty tooltip.

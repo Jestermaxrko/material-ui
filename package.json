@@ -49,10 +49,10 @@
     "test:unit": "cross-env NODE_ENV=test mocha 'packages/**/*.test.js' 'docs/**/*.test.js' 'scripts/**/*.test.js' --exclude '**/node_modules/**'",
     "test:watch": "yarn test:unit --watch",
     "typescript": "lerna run --no-bail --parallel typescript",
-    "copy:core": "cp -R ./packages/material-ui/build ./core",
-    "copy:utils": "cp -R ./packages/material-ui-utils/build ./utils",
-    "copy:styles": "cp -R ./packages/material-ui-styles/build ./styles",
-    "copy:system": "cp -R ./packages/material-ui-system/build ./system",
+    "copy:core": "cp -R ./packages/material-ui/build ./core && cd ./core yarn",
+    "copy:utils": "cp -R ./packages/material-ui-utils/build ./utils && cd ./core yarn",
+    "copy:styles": "cp -R ./packages/material-ui-styles/build ./styles && cd ./core yarn",
+    "copy:system": "cp -R ./packages/material-ui-system/build ./system && cd ./core yarn",
     "prepare": "yarn release:build && yarn copy:core && yarn copy:utils && yarn copy:styles && yarn copy:system"
   },
   "devDependencies": {
