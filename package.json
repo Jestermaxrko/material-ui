@@ -53,7 +53,7 @@
     "copy:utils": "cp -R ./packages/material-ui-utils/build ./utils && cd ./core yarn",
     "copy:styles": "cp -R ./packages/material-ui-styles/build ./styles && cd ./core yarn",
     "copy:system": "cp -R ./packages/material-ui-system/build ./system && cd ./core yarn",
-    "prepare": "yarn release:build && yarn copy:core && yarn copy:utils && yarn copy:styles && yarn copy:system"
+    "build:oh": "yarn release:build && yarn copy:core && yarn copy:utils && yarn copy:styles && yarn copy:system"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
