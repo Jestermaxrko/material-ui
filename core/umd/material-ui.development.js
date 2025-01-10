@@ -16590,12 +16590,6 @@
     name: 'MuiCssBaseline'
   })(CssBaseline);
 
-  function getContainer(container) {
-    container = typeof container === 'function' ? container() : container; // #StrictMode ready
-
-    return ReactDOM.findDOMNode(container);
-  }
-
   var useEnhancedEffect$2 = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
   /**
    * Portals provide a first-class way to render children into a DOM node
@@ -16616,7 +16610,7 @@
     var handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.ref : null, ref);
     useEnhancedEffect$2(function () {
       if (!disablePortal) {
-        setMountNode(getContainer(container) || document.body);
+        setMountNode(document.body);
       }
     }, [container, disablePortal]);
     useEnhancedEffect$2(function () {
@@ -17195,11 +17189,6 @@
     open: propTypes.bool.isRequired
   } ;
 
-  function getContainer$1(container) {
-    container = typeof container === 'function' ? container() : container;
-    return ReactDOM.findDOMNode(container);
-  }
-
   function getHasTransition(props) {
     return props.children ? props.children.props.hasOwnProperty('in') : false;
   } // A modal manager used to track and manage the state of open Modals.
@@ -17310,7 +17299,7 @@
     };
 
     var handleOpen = useEventCallback(function () {
-      var resolvedContainer = getContainer$1(container) || getDoc().body;
+      var resolvedContainer = getDoc().body;
       manager.add(getModal(), resolvedContainer); // The element was already mounted.
 
       if (modalRef.current) {
@@ -26178,8 +26167,7 @@
     };
 
     var handlePaperRef = React.useCallback(function (instance) {
-      // #StrictMode ready
-      paperRef.current = ReactDOM.findDOMNode(instance);
+      paperRef.current = instance;
     }, []);
     React.useEffect(function () {
       if (open) {

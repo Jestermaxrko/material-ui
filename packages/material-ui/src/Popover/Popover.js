@@ -340,8 +340,7 @@ const Popover = React.forwardRef(function Popover(props, ref) {
   };
 
   const handlePaperRef = React.useCallback((instance) => {
-    // #StrictMode ready
-    paperRef.current = ReactDOM.findDOMNode(instance);
+    paperRef.current = instance;
   }, []);
 
   React.useEffect(() => {

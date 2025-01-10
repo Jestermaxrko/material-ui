@@ -43,11 +43,6 @@ var _Unstable_TrapFocus = _interopRequireDefault(require("../Unstable_TrapFocus"
 
 var _SimpleBackdrop = _interopRequireDefault(require("./SimpleBackdrop"));
 
-function getContainer(container) {
-  container = typeof container === 'function' ? container() : container;
-  return ReactDOM.findDOMNode(container);
-}
-
 function getHasTransition(props) {
   return props.children ? props.children.props.hasOwnProperty('in') : false;
 } // A modal manager used to track and manage the state of open Modals.
@@ -160,7 +155,7 @@ var Modal = /*#__PURE__*/React.forwardRef(function Modal(inProps, ref) {
   };
 
   var handleOpen = (0, _useEventCallback.default)(function () {
-    var resolvedContainer = getContainer(container) || getDoc().body;
+    var resolvedContainer = getDoc().body;
     manager.add(getModal(), resolvedContainer); // The element was already mounted.
 
     if (modalRef.current) {

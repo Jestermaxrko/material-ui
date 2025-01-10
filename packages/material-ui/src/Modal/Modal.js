@@ -14,11 +14,6 @@ import ModalManager, { ariaHidden } from './ModalManager';
 import TrapFocus from '../Unstable_TrapFocus';
 import SimpleBackdrop from './SimpleBackdrop';
 
-function getContainer(container) {
-  container = typeof container === 'function' ? container() : container;
-  return ReactDOM.findDOMNode(container);
-}
-
 function getHasTransition(props) {
   return props.children ? props.children.props.hasOwnProperty('in') : false;
 }
@@ -105,7 +100,7 @@ const Modal = React.forwardRef(function Modal(inProps, ref) {
   };
 
   const handleOpen = useEventCallback(() => {
-    const resolvedContainer = getContainer(container) || getDoc().body;
+    const resolvedContainer = getDoc().body;
 
     manager.add(getModal(), resolvedContainer);
 

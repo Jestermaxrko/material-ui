@@ -5,13 +5,6 @@ import { exactProp, HTMLElementType } from '@material-ui/utils';
 import deprecatedPropType from '../utils/deprecatedPropType';
 import setRef from '../utils/setRef';
 import useForkRef from '../utils/useForkRef';
-
-function getContainer(container) {
-  container = typeof container === 'function' ? container() : container; // #StrictMode ready
-
-  return ReactDOM.findDOMNode(container);
-}
-
 const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 /**
  * Portals provide a first-class way to render children into a DOM node
@@ -29,7 +22,7 @@ const Portal = /*#__PURE__*/React.forwardRef(function Portal(props, ref) {
   const handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.ref : null, ref);
   useEnhancedEffect(() => {
     if (!disablePortal) {
-      setMountNode(getContainer(container) || document.body);
+      setMountNode(document.body);
     }
   }, [container, disablePortal]);
   useEnhancedEffect(() => {

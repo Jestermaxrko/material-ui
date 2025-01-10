@@ -315,8 +315,7 @@ var Popover = /*#__PURE__*/React.forwardRef(function Popover(props, ref) {
   };
 
   var handlePaperRef = React.useCallback(function (instance) {
-    // #StrictMode ready
-    paperRef.current = ReactDOM.findDOMNode(instance);
+    paperRef.current = instance;
   }, []);
   React.useEffect(function () {
     if (open) {
