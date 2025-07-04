@@ -46,7 +46,7 @@ const Grow = React.forwardRef(function Grow(props, ref) {
   const autoTimeout = React.useRef();
   const theme = useTheme();
 
-  const enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
+  const enableStrictModeCompat = true;
   const nodeRef = React.useRef(null);
   const foreignRef = useForkRef(children.ref, ref);
   const handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
