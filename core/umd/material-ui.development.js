@@ -9980,7 +9980,6 @@
         _props$component = props.component,
         Component = _props$component === void 0 ? 'div' : _props$component,
         _props$disableStrictM = props.disableStrictModeCompat,
-        disableStrictModeCompat = _props$disableStrictM === void 0 ? false : _props$disableStrictM,
         inProp = props.in,
         onEnter = props.onEnter,
         onEntered = props.onEntered,
@@ -10005,14 +10004,13 @@
         clearTimeout(timer.current);
       };
     }, []);
-    var enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
     var nodeRef = React.useRef(null);
-    var handleRef = useForkRef(ref, enableStrictModeCompat ? nodeRef : undefined);
+    var handleRef = useForkRef(ref,  nodeRef );
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
       return function (nodeOrAppearing, maybeAppearing) {
         if (callback) {
-          var _ref = enableStrictModeCompat ? [nodeRef.current, nodeOrAppearing] : [nodeOrAppearing, maybeAppearing],
+          var _ref =  [nodeRef.current, nodeOrAppearing] ,
               _ref2 = _slicedToArray(_ref, 2),
               node = _ref2[0],
               isAppearing = _ref2[1]; // onEnterXxx and onExitXxx callbacks have a different arguments.length value.
@@ -10102,7 +10100,7 @@
     });
 
     var addEndListener = function addEndListener(nodeOrNext, maybeNext) {
-      var next = enableStrictModeCompat ? nodeOrNext : maybeNext;
+      var next =  nodeOrNext ;
 
       if (timeout === 'auto') {
         timer.current = setTimeout(next, autoTransitionDuration.current || 0);
@@ -10118,7 +10116,7 @@
       onExited: handleExited,
       onExiting: handleExiting,
       addEndListener: addEndListener,
-      nodeRef: enableStrictModeCompat ? nodeRef : undefined,
+      nodeRef:  nodeRef ,
       timeout: timeout === 'auto' ? null : timeout
     }, other), function (state, childProps) {
       return /*#__PURE__*/React.createElement(Component, _extends({
@@ -12333,7 +12331,6 @@
   var Fade = /*#__PURE__*/React.forwardRef(function Fade(props, ref) {
     var children = props.children,
         _props$disableStrictM = props.disableStrictModeCompat,
-        disableStrictModeCompat = _props$disableStrictM === void 0 ? false : _props$disableStrictM,
         inProp = props.in,
         onEnter = props.onEnter,
         onEntered = props.onEntered,
@@ -12349,15 +12346,14 @@
         other = _objectWithoutProperties(props, ["children", "disableStrictModeCompat", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "TransitionComponent", "timeout"]);
 
     var theme = useTheme$1();
-    var enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
     var nodeRef = React.useRef(null);
     var foreignRef = useForkRef(children.ref, ref);
-    var handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
+    var handleRef = useForkRef( nodeRef , foreignRef);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
       return function (nodeOrAppearing, maybeAppearing) {
         if (callback) {
-          var _ref = enableStrictModeCompat ? [nodeRef.current, nodeOrAppearing] : [nodeOrAppearing, maybeAppearing],
+          var _ref =  [nodeRef.current, nodeOrAppearing] ,
               _ref2 = _slicedToArray(_ref, 2),
               node = _ref2[0],
               isAppearing = _ref2[1]; // onEnterXxx and onExitXxx callbacks have a different arguments.length value.
@@ -12409,7 +12405,7 @@
     return /*#__PURE__*/React.createElement(TransitionComponent, _extends({
       appear: true,
       in: inProp,
-      nodeRef: enableStrictModeCompat ? nodeRef : undefined,
+      nodeRef:  nodeRef ,
       onEnter: handleEnter,
       onEntered: handleEntered,
       onEntering: handleEntering,
@@ -22591,7 +22587,6 @@
   var Grow = /*#__PURE__*/React.forwardRef(function Grow(props, ref) {
     var children = props.children,
         _props$disableStrictM = props.disableStrictModeCompat,
-        disableStrictModeCompat = _props$disableStrictM === void 0 ? false : _props$disableStrictM,
         inProp = props.in,
         onEnter = props.onEnter,
         onEntered = props.onEntered,
@@ -22609,15 +22604,14 @@
     var timer = React.useRef();
     var autoTimeout = React.useRef();
     var theme = useTheme$1();
-    var enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
     var nodeRef = React.useRef(null);
     var foreignRef = useForkRef(children.ref, ref);
-    var handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
+    var handleRef = useForkRef( nodeRef , foreignRef);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
       return function (nodeOrAppearing, maybeAppearing) {
         if (callback) {
-          var _ref = enableStrictModeCompat ? [nodeRef.current, nodeOrAppearing] : [nodeOrAppearing, maybeAppearing],
+          var _ref =  [nodeRef.current, nodeOrAppearing] ,
               _ref2 = _slicedToArray(_ref, 2),
               node = _ref2[0],
               isAppearing = _ref2[1]; // onEnterXxx and onExitXxx callbacks have a different arguments.length value.
@@ -22704,7 +22698,7 @@
     var handleExited = normalizedTransitionCallback(onExited);
 
     var addEndListener = function addEndListener(nodeOrNext, maybeNext) {
-      var next = enableStrictModeCompat ? nodeOrNext : maybeNext;
+      var next =  nodeOrNext ;
 
       if (timeout === 'auto') {
         timer.current = setTimeout(next, autoTimeout.current || 0);
@@ -22719,7 +22713,7 @@
     return /*#__PURE__*/React.createElement(TransitionComponent, _extends({
       appear: true,
       in: inProp,
-      nodeRef: enableStrictModeCompat ? nodeRef : undefined,
+      nodeRef:  nodeRef ,
       onEnter: handleEnter,
       onEntered: handleEntered,
       onEntering: handleEntering,
@@ -39421,7 +39415,6 @@
   var Zoom = /*#__PURE__*/React.forwardRef(function Zoom(props, ref) {
     var children = props.children,
         _props$disableStrictM = props.disableStrictModeCompat,
-        disableStrictModeCompat = _props$disableStrictM === void 0 ? false : _props$disableStrictM,
         inProp = props.in,
         onEnter = props.onEnter,
         onEntered = props.onEntered,
@@ -39437,15 +39430,14 @@
         other = _objectWithoutProperties(props, ["children", "disableStrictModeCompat", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"]);
 
     var theme = useTheme$1();
-    var enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
     var nodeRef = React.useRef(null);
     var foreignRef = useForkRef(children.ref, ref);
-    var handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
+    var handleRef = useForkRef( nodeRef , foreignRef);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
       return function (nodeOrAppearing, maybeAppearing) {
         if (callback) {
-          var _ref = enableStrictModeCompat ? [nodeRef.current, nodeOrAppearing] : [nodeOrAppearing, maybeAppearing],
+          var _ref =  [nodeRef.current, nodeOrAppearing] ,
               _ref2 = _slicedToArray(_ref, 2),
               node = _ref2[0],
               isAppearing = _ref2[1]; // onEnterXxx and onExitXxx callbacks have a different arguments.length value.
@@ -39497,7 +39489,7 @@
     return /*#__PURE__*/React.createElement(TransitionComponent, _extends({
       appear: true,
       in: inProp,
-      nodeRef: enableStrictModeCompat ? nodeRef : undefined,
+      nodeRef:  nodeRef ,
       onEnter: handleEnter,
       onEntered: handleEntered,
       onEntering: handleEntering,

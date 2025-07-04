@@ -65,7 +65,7 @@ var Zoom = /*#__PURE__*/React.forwardRef(function Zoom(props, ref) {
       TransitionComponent = _props$TransitionComp === void 0 ? _reactTransitionGroup.Transition : _props$TransitionComp,
       other = (0, _objectWithoutProperties2.default)(props, ["children", "disableStrictModeCompat", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"]);
   var theme = (0, _useTheme.default)();
-  var enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
+  var enableStrictModeCompat = true;
   var nodeRef = React.useRef(null);
   var foreignRef = (0, _useForkRef.default)(children.ref, ref);
   var handleRef = (0, _useForkRef.default)(enableStrictModeCompat ? nodeRef : undefined, foreignRef);

@@ -80,7 +80,7 @@ const Collapse = /*#__PURE__*/React.forwardRef(function Collapse(props, ref) {
       clearTimeout(timer.current);
     };
   }, []);
-  const enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
+  const enableStrictModeCompat = true;
   const nodeRef = React.useRef(null);
   const handleRef = useForkRef(ref, enableStrictModeCompat ? nodeRef : undefined);
 

@@ -43,7 +43,7 @@ const Fade = /*#__PURE__*/React.forwardRef(function Fade(props, ref) {
         other = _objectWithoutPropertiesLoose(props, ["children", "disableStrictModeCompat", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "TransitionComponent", "timeout"]);
 
   const theme = useTheme();
-  const enableStrictModeCompat = theme.unstable_strictMode && !disableStrictModeCompat;
+  const enableStrictModeCompat = true;
   const nodeRef = React.useRef(null);
   const foreignRef = useForkRef(children.ref, ref);
   const handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
