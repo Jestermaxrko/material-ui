@@ -19,7 +19,7 @@ const Portal = /*#__PURE__*/React.forwardRef(function Portal(props, ref) {
     onRendered
   } = props;
   const [mountNode, setMountNode] = React.useState(null);
-  const handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.ref : null, ref);
+  const handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.props.ref : null, ref);
   useEnhancedEffect(() => {
     if (!disablePortal) {
       setMountNode(document.body);

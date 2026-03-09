@@ -113,7 +113,7 @@ describe('utils/index.js', () => {
     it('does nothing if none of the forked branches requires a ref', () => {
       const Outer = React.forwardRef(function Outer(props, ref) {
         const { children } = props;
-        const handleRef = useForkRef(children.ref, ref);
+        const handleRef = useForkRef(children.props.ref, ref);
 
         return React.cloneElement(children, { ref: handleRef });
       });

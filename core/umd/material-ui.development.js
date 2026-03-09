@@ -12347,7 +12347,7 @@
 
     var theme = useTheme$1();
     var nodeRef = React.useRef(null);
-    var foreignRef = useForkRef(children.ref, ref);
+    var foreignRef = useForkRef(children.props.ref, ref);
     var handleRef = useForkRef( nodeRef , foreignRef);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
@@ -16232,7 +16232,7 @@
     var handleOwnRef = React.useCallback(function (instance) {
       nodeRef.current = instance;
     }, []);
-    var handleRef = useForkRef(children.ref, handleOwnRef); // The handler doesn't take event.defaultPrevented into account:
+    var handleRef = useForkRef(children.props.ref, handleOwnRef); // The handler doesn't take event.defaultPrevented into account:
     //
     // event.preventDefault() is meant to stop default behaviours like
     // clicking a checkbox to check it, hitting a button to submit a form,
@@ -16603,7 +16603,7 @@
         mountNode = _React$useState[0],
         setMountNode = _React$useState[1];
 
-    var handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.ref : null, ref);
+    var handleRef = useForkRef( /*#__PURE__*/React.isValidElement(children) ? children.props.ref : null, ref);
     useEnhancedEffect$2(function () {
       if (!disablePortal) {
         setMountNode(document.body);
@@ -16963,7 +16963,7 @@
       // #StrictMode ready
       rootRef.current = instance;
     }, []);
-    var handleRef = useForkRef(children.ref, handleOwnRef);
+    var handleRef = useForkRef(children.props.ref, handleOwnRef);
     var prevOpenRef = React.useRef();
     React.useEffect(function () {
       prevOpenRef.current = open;
@@ -18415,7 +18415,7 @@
     var handleOwnRef = React.useCallback(function (instance) {
       childrenRef.current = instance;
     }, []);
-    var handleRefIntermediary = useForkRef(children.ref, handleOwnRef);
+    var handleRefIntermediary = useForkRef(children.props.ref, handleOwnRef);
     var handleRef = useForkRef(handleRefIntermediary, ref);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
@@ -22605,7 +22605,7 @@
     var autoTimeout = React.useRef();
     var theme = useTheme$1();
     var nodeRef = React.useRef(null);
-    var foreignRef = useForkRef(children.ref, ref);
+    var foreignRef = useForkRef(children.props.ref, ref);
     var handleRef = useForkRef( nodeRef , foreignRef);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {
@@ -39078,7 +39078,7 @@
 
     var handleUseRef = useForkRef(setChildNode, ref);
     var handleFocusRef = useForkRef(focusVisibleRef, handleUseRef);
-    var handleRef = useForkRef(children.ref, handleFocusRef); // There is no point in displaying an empty tooltip.
+    var handleRef = useForkRef(children.props.ref, handleFocusRef); // There is no point in displaying an empty tooltip.
 
     if (title === '') {
       open = false;
@@ -39431,7 +39431,7 @@
 
     var theme = useTheme$1();
     var nodeRef = React.useRef(null);
-    var foreignRef = useForkRef(children.ref, ref);
+    var foreignRef = useForkRef(children.props.ref, ref);
     var handleRef = useForkRef( nodeRef , foreignRef);
 
     var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {

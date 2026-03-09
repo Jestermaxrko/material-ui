@@ -117,7 +117,7 @@ var Slide = /*#__PURE__*/React.forwardRef(function Slide(props, ref) {
   var handleOwnRef = React.useCallback(function (instance) {
     childrenRef.current = instance;
   }, []);
-  var handleRefIntermediary = (0, _useForkRef.default)(children.ref, handleOwnRef);
+  var handleRefIntermediary = (0, _useForkRef.default)(children.props.ref, handleOwnRef);
   var handleRef = (0, _useForkRef.default)(handleRefIntermediary, ref);
 
   var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {

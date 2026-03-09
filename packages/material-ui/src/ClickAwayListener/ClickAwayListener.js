@@ -49,7 +49,7 @@ function ClickAwayListener(props) {
   const handleOwnRef = React.useCallback((instance) => {
     nodeRef.current = instance
   }, []);
-  const handleRef = useForkRef(children.ref, handleOwnRef);
+  const handleRef = useForkRef(children.props.ref, handleOwnRef);
 
   // The handler doesn't take event.defaultPrevented into account:
   //

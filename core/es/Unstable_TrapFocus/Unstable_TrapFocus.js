@@ -29,7 +29,7 @@ function Unstable_TrapFocus(props) {
     // #StrictMode ready
     rootRef.current = instance;
   }, []);
-  const handleRef = useForkRef(children.ref, handleOwnRef);
+  const handleRef = useForkRef(children.props.ref, handleOwnRef);
   const prevOpenRef = React.useRef();
   React.useEffect(() => {
     prevOpenRef.current = open;

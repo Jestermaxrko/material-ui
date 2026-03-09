@@ -46,7 +46,7 @@ var Fade = /*#__PURE__*/React.forwardRef(function Fade(props, ref) {
   var theme = useTheme();
   var enableStrictModeCompat = true;
   var nodeRef = React.useRef(null);
-  var foreignRef = useForkRef(children.ref, ref);
+  var foreignRef = useForkRef(children.props.ref, ref);
   var handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
 
   var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {

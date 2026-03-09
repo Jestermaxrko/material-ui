@@ -45,7 +45,7 @@ function ClickAwayListener(props) {
   const handleOwnRef = React.useCallback(instance => {
     nodeRef.current = instance;
   }, []);
-  const handleRef = useForkRef(children.ref, handleOwnRef); // The handler doesn't take event.defaultPrevented into account:
+  const handleRef = useForkRef(children.props.ref, handleOwnRef); // The handler doesn't take event.defaultPrevented into account:
   //
   // event.preventDefault() is meant to stop default behaviours like
   // clicking a checkbox to check it, hitting a button to submit a form,

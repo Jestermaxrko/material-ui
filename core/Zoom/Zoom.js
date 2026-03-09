@@ -67,7 +67,7 @@ var Zoom = /*#__PURE__*/React.forwardRef(function Zoom(props, ref) {
   var theme = (0, _useTheme.default)();
   var enableStrictModeCompat = true;
   var nodeRef = React.useRef(null);
-  var foreignRef = (0, _useForkRef.default)(children.ref, ref);
+  var foreignRef = (0, _useForkRef.default)(children.props.ref, ref);
   var handleRef = (0, _useForkRef.default)(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
 
   var normalizedTransitionCallback = function normalizedTransitionCallback(callback) {

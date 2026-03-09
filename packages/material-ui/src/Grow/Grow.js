@@ -48,7 +48,7 @@ const Grow = React.forwardRef(function Grow(props, ref) {
 
   const enableStrictModeCompat = true;
   const nodeRef = React.useRef(null);
-  const foreignRef = useForkRef(children.ref, ref);
+  const foreignRef = useForkRef(children.props.ref, ref);
   const handleRef = useForkRef(enableStrictModeCompat ? nodeRef : undefined, foreignRef);
 
   const normalizedTransitionCallback = (callback) => (nodeOrAppearing, maybeAppearing) => {

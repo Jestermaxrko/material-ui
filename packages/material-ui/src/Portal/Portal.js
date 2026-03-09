@@ -15,7 +15,7 @@ const useEnhancedEffect = typeof window !== 'undefined' ? React.useLayoutEffect 
 const Portal = React.forwardRef(function Portal(props, ref) {
   const { children, container, disablePortal = false, onRendered } = props;
   const [mountNode, setMountNode] = React.useState(null);
-  const handleRef = useForkRef(React.isValidElement(children) ? children.ref : null, ref);
+  const handleRef = useForkRef(React.isValidElement(children) ? children.props.ref : null, ref);
 
   useEnhancedEffect(() => {
     if (!disablePortal) {
